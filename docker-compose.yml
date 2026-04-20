@@ -1,0 +1,13 @@
+services:
+  unmomentclement:
+    build: .
+    container_name: unmomentclement
+    ports:
+      - "80"
+    restart: unless-stopped
+    networks:
+      - nginx-proxy-manager_default
+
+networks:
+  nginx-proxy-manager_default:
+    external: true
