@@ -5,10 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Un Moment Clément — Massages bien-être à Bordeaux</title>
 <meta name="description" content="Clément Boéchat, praticien en massages bien-être à Bordeaux. Massage californien, Lomi Lomi, ayurvédique, deep tissue. En cabinet ou à domicile." />
+<meta name="theme-color" content="#FAF7F2" />
 
+<!-- Bhavuka : police principale, préchargée -->
+<link rel="preload" href="assets/Bhavuka-Regular.ttf" as="font" type="font/truetype" crossorigin />
+<!-- Image hero : LCP, préchargée -->
+<link rel="preload" href="assets/hero-massage.jpeg" as="image" />
+
+<!-- JetBrains Mono : utilisée seulement pour les labels/eyebrows, chargée en async -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" /></noscript>
 
 <style>
   @font-face {
@@ -19,7 +27,6 @@
     font-display: swap;
   }
 </style>
-
 
 <style>
   :root {
@@ -33,14 +40,11 @@
     --line:        #E4DBCD;
     --line-soft:   #EEE6D8;
 
-    --accent:      #8A9A80;
-    --accent-deep: #6B7D62;
-    --accent-soft: #D8DFCF;
-    --accent-wash: #EEF1E7;
-
-    --terra:       #C08770;
-    --terra-deep:  #A46A54;
-    --terra-soft:  #EBD3C6;
+    /* Accent terracotta (fixe) */
+    --accent:      #C08770;
+    --accent-deep: #9F6951;
+    --accent-soft: #ECD4C6;
+    --accent-wash: #F6E8DE;
 
     --r-xs: 6px;
     --r-sm: 10px;
@@ -57,256 +61,7 @@
     --f-serif: "Bhavuka", Georgia, serif;
     --f-sans:  "Bhavuka", Georgia, serif;
     --f-mono:  "JetBrains Mono", ui-monospace, Menlo, monospace;
-    --f-display: "Bhavuka", Georgia, serif;
   }
-
-  [data-accent="olive"] {
-    --accent:      #8C8A4E;
-    --accent-deep: #6F6D3A;
-    --accent-soft: #DFD9B8;
-    --accent-wash: #F1EEDB;
-  }
-  [data-accent="terracotta"] {
-    --accent:      #C08770;
-    --accent-deep: #9F6951;
-    --accent-soft: #ECD4C6;
-    --accent-wash: #F6E8DE;
-  }
-  [data-accent="clay"] {
-    --accent:      #A78570;
-    --accent-deep: #84654F;
-    --accent-soft: #E3D3C3;
-    --accent-wash: #F1E7DB;
-  }
-  [data-accent="ocean"] {
-    --accent:      #6B8A93;
-    --accent-deep: #4F6B73;
-    --accent-soft: #CBDADF;
-    --accent-wash: #E5EEF1;
-  }
-  [data-accent="plum"] {
-    --accent:      #8B6E7A;
-    --accent-deep: #6C5360;
-    --accent-soft: #DBCBD3;
-    --accent-wash: #EEE4E9;
-  }
-
-  [data-mood="warm"] {
-    --cream: #F2E7D5;
-    --ivory: #EFE2CC;
-    --paper: #E9DCC4;
-    --sand:  #E1D1B5;
-    --line:  #D8C7A8;
-    --line-soft: #DFD0B4;
-  }
-  [data-mood="dark"] {
-    --cream: #1F1B17;
-    --ivory: #272320;
-    --paper: #181513;
-    --sand:  #2A2622;
-    --bark:  #F4EDE1;
-    --bark-soft: #CFC5B5;
-    --bark-mute: #8A8075;
-    --line: #342E28;
-    --line-soft: #2A2620;
-  }
-  [data-mood="dark"] body,
-  [data-mood="dark"].topbar {
-    background: var(--cream);
-  }
-
-  [data-density="compact"] section { padding: clamp(48px, 6vw, 80px) 0 !important; }
-  [data-density="compact"] .hero { padding: clamp(32px, 6vw, 72px) 0 clamp(40px, 6vw, 72px) !important; }
-  [data-density="compact"] .section-head { margin-bottom: 36px !important; padding-bottom: 22px !important; }
-  [data-density="compact"] .prestation { padding: 22px 20px 26px !important; min-height: 0 !important; }
-
-  [data-density="airy"] section { padding: clamp(110px, 14vw, 200px) 0 !important; }
-  [data-density="airy"] .section-head { margin-bottom: 90px !important; padding-bottom: 48px !important; }
-  [data-density="airy"] .prestation { padding: 44px 36px 48px !important; min-height: 320px !important; }
-
-  [data-divider="none"] .section-head { border-bottom-color: transparent !important; }
-  [data-divider="dashed"] .section-head { border-bottom-style: dashed !important; border-bottom-color: var(--accent-soft) !important; }
-  [data-divider="double"] .section-head {
-    border-bottom: 3px double var(--accent-soft) !important;
-    padding-bottom: 36px !important;
-  }
-  [data-divider="accent"] .section-head {
-    border-bottom-color: transparent !important;
-    position: relative;
-  }
-  [data-divider="accent"] .section-head::after {
-    content: "";
-    position: absolute;
-    left: 0; bottom: 0;
-    width: 56px; height: 2px;
-    background: var(--accent);
-  }
-
-  [data-corner-style="sharp"] {
-    --r-xs: 0; --r-sm: 0; --r-md: 0; --r-lg: 0; --r-xl: 0;
-  }
-  [data-corner-style="sharp"] .btn { border-radius: 2px !important; }
-  [data-corner-style="sharp"] .brand-mark,
-  [data-corner-style="sharp"] .value-dot,
-  [data-corner-style="sharp"] .contact-icon { border-radius: 0 !important; }
-  [data-corner-style="sharp"] .hero-badge-icon { border-radius: 0 !important; }
-  [data-corner-style="sharp"] .placeholder-label { border-radius: 0 !important; }
-  [data-corner-style="sharp"] .tarif-badge { border-radius: 0 !important; }
-  [data-corner-style="sharp"] .hero-mark { border-radius: 0 !important; }
-
-  [data-corner-style="pill"] {
-    --r-xs: 12px; --r-sm: 18px; --r-md: 24px; --r-lg: 32px; --r-xl: 44px;
-  }
-
-  [data-type-pair="bhavuka"] {
-    --f-serif: "Bhavuka", "Fraunces", Georgia, serif;
-  }
-  [data-type-pair="bhavuka"] h1,
-  [data-type-pair="bhavuka"] h2,
-  [data-type-pair="bhavuka"] h3,
-  [data-type-pair="bhavuka"] h4,
-  [data-type-pair="bhavuka"] .brand,
-  [data-type-pair="bhavuka"] .tarif-price,
-  [data-type-pair="bhavuka"] .spec-num,
-  [data-type-pair="bhavuka"] .about-lead,
-  [data-type-pair="bhavuka"] .about-quote,
-  [data-type-pair="bhavuka"] .contact-row-value,
-  [data-type-pair="bhavuka"] .value-title {
-    font-family: "Bhavuka", "Fraunces", Georgia, serif !important;
-    font-variation-settings: normal;
-  }
-  [data-type-pair="bhavuka"] h1,
-  [data-type-pair="bhavuka"] h2 {
-    letter-spacing: -0.01em;
-  }
-  [data-type-pair="bhavuka"] h1 em,
-  [data-type-pair="bhavuka"] h2 em,
-  [data-type-pair="bhavuka"] h3 em {
-    font-style: normal;
-    color: var(--accent-deep);
-  }
-
-  [data-type-pair="serif-duo"] {
-    --f-serif: "Fraunces", Georgia, serif;
-    --f-sans: "Fraunces", Georgia, serif;
-  }
-  [data-type-pair="serif-duo"] body,
-  [data-type-pair="serif-duo"] .btn,
-  [data-type-pair="serif-duo"] p {
-    font-family: "Fraunces", Georgia, serif !important;
-    font-variation-settings: "opsz" 14, "SOFT" 50;
-  }
-  [data-type-pair="editorial"] h1,
-  [data-type-pair="editorial"] h2,
-  [data-type-pair="editorial"] h3,
-  [data-type-pair="editorial"] h4 {
-    font-family: "Fraunces", Georgia, serif !important;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    font-variation-settings: "opsz" 144, "SOFT" 0;
-  }
-  [data-type-pair="mono-display"] h1,
-  [data-type-pair="mono-display"] h2 {
-    font-family: "JetBrains Mono", ui-monospace, monospace !important;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    text-transform: lowercase;
-  }
-  [data-type-pair="mono-display"] h1 em,
-  [data-type-pair="mono-display"] h2 em {
-    font-style: normal;
-    color: var(--accent-deep);
-  }
-
-  [data-header-style="caps"] h1,
-  [data-header-style="caps"] h2 {
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    font-weight: 500;
-    font-size: calc(0.8em);
-  }
-  [data-header-style="caps"] h1 em,
-  [data-header-style="caps"] h2 em {
-    font-style: normal;
-  }
-  [data-header-style="bold"] h1,
-  [data-header-style="bold"] h2 {
-    font-weight: 600;
-    font-variation-settings: "opsz" 144, "SOFT" 0;
-    letter-spacing: -0.035em;
-  }
-  [data-header-style="bold"] h1 em,
-  [data-header-style="bold"] h2 em {
-    font-style: normal;
-    color: var(--accent-deep);
-  }
-
-  [data-number-style="serif"] .prestation-num {
-    font-family: var(--f-serif);
-    font-size: 28px;
-    letter-spacing: -0.01em;
-    text-transform: none;
-    color: var(--accent-deep);
-    font-style: italic;
-  }
-  [data-number-style="serif"] .prestation-num::after {
-    margin-top: 14px;
-  }
-  [data-number-style="huge"] .prestation-num {
-    font-family: var(--f-serif);
-    font-size: 72px;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    color: var(--accent-soft);
-    margin-bottom: 8px;
-    font-weight: 300;
-  }
-  [data-number-style="huge"] .prestation-num::after { display: none; }
-  [data-number-style="dot"] .prestation-num {
-    font-size: 0;
-    margin-bottom: 24px;
-  }
-  [data-number-style="dot"] .prestation-num::before {
-    content: "";
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    display: inline-block;
-  }
-  [data-number-style="dot"] .prestation-num::after { display: none; }
-
-  [data-hero-layout="centered"] .hero-grid {
-    grid-template-columns: 1fr !important;
-    text-align: center;
-    max-width: 780px;
-    margin: 0 auto;
-  }
-  [data-hero-layout="centered"] .hero-copy .eyebrow { justify-content: center; }
-  [data-hero-layout="centered"] .hero-sub { margin-left: auto; margin-right: auto; }
-  [data-hero-layout="centered"] .hero-cta { justify-content: center; }
-  [data-hero-layout="centered"] .values { justify-content: center; }
-  [data-hero-layout="centered"] .hero-media { display: none; }
-
-  [data-hero-layout="stacked"] .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-  [data-hero-layout="stacked"] .hero-media {
-    aspect-ratio: 21 / 9 !important;
-  }
-  [data-hero-layout="stacked"] .hero-badge,
-  [data-hero-layout="stacked"] .hero-mark {
-    display: none;
-  }
-
-  [data-hero-layout="reverse"] .hero-grid {
-    direction: rtl;
-  }
-  [data-hero-layout="reverse"] .hero-grid > * {
-    direction: ltr;
-  }
-  [data-hero-layout="reverse"] .hero-badge { left: auto; right: -20px; }
-  [data-hero-layout="reverse"] .hero-mark { right: auto; left: -12px; }
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -588,16 +343,7 @@
     object-fit: cover;
     object-position: center 15%;
   }
-  [data-hero-shape="arch"] .hero-media {
-    border-radius: 50% 50% var(--r-md) var(--r-md) / 38% 38% var(--r-md) var(--r-md);
-  }
-  [data-hero-shape="rect"] .hero-media {
-    border-radius: var(--r-md);
-  }
-  [data-hero-shape="circle"] .hero-media {
-    border-radius: 50%;
-    aspect-ratio: 1;
-  }
+  .hero-media { border-radius: var(--r-md); }
 
   .hero-badge {
     position: absolute;
@@ -699,23 +445,10 @@
     display: grid;
     gap: clamp(16px, 2vw, 24px);
   }
-  [data-cards-layout="grid3"] .prestations-grid { grid-template-columns: repeat(3, 1fr); }
-  [data-cards-layout="grid2"] .prestations-grid { grid-template-columns: repeat(2, 1fr); }
-  [data-cards-layout="asym"]  .prestations-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  [data-cards-layout="asym"] .prestation:nth-child(1) { grid-column: span 3; }
-  [data-cards-layout="asym"] .prestation:nth-child(2) { grid-column: span 3; }
-  [data-cards-layout="asym"] .prestation:nth-child(3) { grid-column: span 2; }
-  [data-cards-layout="asym"] .prestation:nth-child(4) { grid-column: span 2; }
-  [data-cards-layout="asym"] .prestation:nth-child(5) { grid-column: span 2; }
-  [data-cards-layout="asym"] .prestation:nth-child(6) { grid-column: span 3; }
-  [data-cards-layout="asym"] .prestation:nth-child(7) { grid-column: span 3; }
+  .prestations-grid { grid-template-columns: repeat(3, 1fr); }
 
   @media (max-width: 900px) {
-    [data-cards-layout="grid3"] .prestations-grid,
-    [data-cards-layout="asym"]  .prestations-grid { grid-template-columns: repeat(2, 1fr); }
-    [data-cards-layout="asym"] .prestation { grid-column: span 1 !important; }
+    .prestations-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 580px) {
     .prestations-grid { grid-template-columns: 1fr !important; }
@@ -731,23 +464,11 @@
     flex-direction: column;
     min-height: 260px;
   }
-  [data-card-style="outlined"] .prestation {
+  .prestation {
     border: 1px solid var(--line);
     background: var(--cream);
   }
-  [data-card-style="filled"] .prestation {
-    border: 1px solid transparent;
-    background: var(--ivory);
-  }
-  [data-card-style="minimal"] .prestation {
-    background: transparent;
-    border: none;
-    border-top: 1px solid var(--line);
-    border-radius: 0;
-    padding: 32px 0 24px;
-  }
-  [data-card-style="outlined"] .prestation:hover,
-  [data-card-style="filled"] .prestation:hover {
+  .prestation:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-2);
     border-color: var(--accent-soft);
@@ -800,12 +521,6 @@
     background: var(--paper);
     border: 1px solid var(--line);
     align-self: flex-start;
-  }
-  [data-card-style="minimal"] .prestation-tag {
-    background: transparent;
-    padding-left: 0;
-    padding-right: 0;
-    border: none;
   }
 
   /* ============ TARIFS ============ */
@@ -1260,7 +975,7 @@
 
 </style>
 </head>
-<body data-accent="terracotta" data-cards-layout="grid3" data-card-style="outlined" data-hero-shape="rect" data-type-pair="bhavuka" data-mood="cream" data-hero-layout="split" data-divider="line" data-density="cozy" data-header-style="italic" data-corner-style="rounded" data-number-style="mono">
+<body>
 
 <!-- ============ TOPBAR INSTAGRAM ============ -->
 <div class="insta-bar">
@@ -1281,7 +996,7 @@
 <nav class="topbar" id="topbar">
   <div class="nav-inner">
     <a href="#hero" class="brand" aria-label="Un Moment Clément">
-      <img class="brand-mark" src="assets/logo-c.png" alt="" />
+      <img class="brand-mark" src="assets/logo-c.png" alt="" width="34" height="34" />
       <span>Un Moment Clément</span>
     </a>
     <div class="nav-links">
@@ -1350,7 +1065,7 @@
       </div>
 
       <div class="hero-media reveal delay-2">
-        <img class="hero-photo" src="assets/hero-massage.jpeg" alt="Clément en séance de massage" />
+        <img class="hero-photo" src="assets/hero-massage.jpeg" alt="Clément en séance de massage" fetchpriority="high" width="600" height="750" />
       </div>
 
     </div>
@@ -1593,7 +1308,7 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-media reveal">
-        <img class="about-photo" src="assets/portrait.jpg" alt="Portrait de Clément dans son cabinet" />
+        <img class="about-photo" src="assets/portrait.jpg" alt="Portrait de Clément dans son cabinet" loading="lazy" width="600" height="750" />
       </div>
 
       <div class="about-copy">
