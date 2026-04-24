@@ -12,7 +12,7 @@
 - HTML / CSS / JS vanilla — aucun framework, aucune dépendance npm
 - Police locale : **Bhavuka** (assets/)
 - Police CDN : JetBrains Mono via Google Fonts (chargée de façon asynchrone)
-- Serveur : **nginx** (image Docker officielle `nginx:1.27-alpine`)
+- Serveur : **nginx** (image Docker officielle `nginx:1.29-alpine`)
 
 ## Développement local
 
@@ -47,7 +47,7 @@ assets/
   hero-massage.jpeg Photo hero (LCP)
   portrait.jpg      Portrait section "À propos"
   Bhavuka-Regular.ttf Police principale
-Dockerfile          Image nginx:1.27-alpine
+Dockerfile          Image nginx:1.29-alpine
 docker-compose.yml  Service + réseau nginx-proxy-manager_default
 ```
 
