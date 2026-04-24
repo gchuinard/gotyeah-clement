@@ -1,3 +1,6 @@
+const fontPreload = document.getElementById("jetbrains-font-preload");
+if (fontPreload) fontPreload.rel = "stylesheet";
+
 const topbar = document.getElementById("topbar");
 const onScroll = () => {
   topbar.classList.toggle("scrolled", window.scrollY > 10);
