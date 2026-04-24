@@ -209,7 +209,7 @@ nav.topbar.scrolled {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--f-display);
+  font-family: var(--f-serif);
   font-size: 20px;
   letter-spacing: 0;
   color: var(--bark);
