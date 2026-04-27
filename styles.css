@@ -225,7 +225,7 @@ nav.topbar.scrolled {
 .nav-links {
   display: flex;
   gap: 32px;
-  font-size: 14px;
+  font-size: 20px;
   color: var(--bark-soft);
 }
 .nav-links a {
