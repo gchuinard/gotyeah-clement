@@ -17,11 +17,11 @@
   --line: #e4dbcd;
   --line-soft: #eee6d8;
 
-  /* Accent terracotta (fixe) */
-  --accent: #c08770;
-  --accent-deep: #9f6951;
-  --accent-soft: #ecd4c6;
-  --accent-wash: #f6e8de;
+  /* Accent — couleur du logo */
+  --accent: #c05432;
+  --accent-deep: #a04228;
+  --accent-soft: #e8b09a;
+  --accent-wash: #f4ddd5;
 
   --r-xs: 6px;
   --r-md: 16px;
@@ -362,7 +362,7 @@ nav.topbar.scrolled {
   white-space: nowrap;
 }
 .btn-primary {
-  background: var(--bark);
+  background: var(--accent);
   color: var(--cream);
 }
 .btn-primary:hover {
@@ -383,23 +383,21 @@ nav.topbar.scrolled {
   border-color: var(--accent);
 }
 .btn-ghost:hover {
-  background: var(--accent-wash);
-  border-color: var(--bark);
+  color: var(--accent);
   transform: translateY(-1px);
   box-shadow: 0 8px 20px -8px rgba(61, 52, 44, 0.2);
 }
 
 .btn-ghost-dark {
-  background: transparent;
-  color: var(--accent-soft);
-  border-color: var(--accent-soft);
+  background: var(--cream);
+  color: var(--accent);
+  border-color: transparent;
 }
 .btn-ghost-dark:hover {
-  background: rgba(236, 212, 198, 0.12);
-  border-color: var(--cream);
+  background: var(--accent);
   color: var(--cream);
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.25);
 }
 
 .btn .arrow {
@@ -442,22 +440,31 @@ nav.topbar.scrolled {
   h1 {
     font-size: clamp(54px, 14vw, 72px);
   }
+  .hero {
+    overflow: hidden;
+  }
   .hero-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
   }
   .hero-copy-top {
     order: 1;
+    padding-bottom: 20px;
   }
   .hero-copy-top h1 {
     margin-bottom: 0;
   }
   .hero-media {
     order: 2;
+    aspect-ratio: 4 / 3;
+    border-radius: 0;
+    margin-left: calc(-1 * var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
   }
   .hero-copy-bottom {
     order: 3;
+    padding-top: 28px;
   }
 }
 .hero-copy-top h1 {
@@ -688,9 +695,9 @@ section {
   box-shadow: 0 8px 36px rgba(61, 52, 44, 0.26);
 }
 .tarif.featured:hover {
-  background: var(--bark-soft);
   box-shadow: 0 16px 52px -12px rgba(0, 0, 0, 0.4);
 }
+
 .tarif.featured * {
   color: var(--cream);
 }
@@ -769,6 +776,17 @@ section {
 .tarif-btn {
   width: 100%;
   justify-content: center;
+}
+.tarif.featured .tarif-btn {
+  background: var(--cream);
+  color: var(--accent);
+  border-color: transparent;
+}
+.tarif.featured .tarif-btn:hover {
+  background: var(--accent);
+  color: var(--cream);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.25);
 }
 
 .tarifs-note {
@@ -1087,3 +1105,4 @@ footer {
     scroll-behavior: auto;
   }
 }
+
