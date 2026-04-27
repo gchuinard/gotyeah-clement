@@ -111,8 +111,27 @@
             <path d="M1 7h12M8 2l5 5-5 5" />
           </svg>
         </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#prestations" class="mobile-link">Prestations</a>
+      <a href="#tarifs" class="mobile-link">Tarifs</a>
+      <a href="#domicile" class="mobile-link">À domicile</a>
+      <a href="#about" class="mobile-link">À propos de moi</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="tel:+33660095773" class="btn btn-primary mobile-menu-cta">
+        Réserver par téléphone
+        <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M1 7h12M8 2l5 5-5 5" />
+        </svg>
+      </a>
+    </div>
 
     <main>
       <!-- ============ HERO ============ -->
@@ -187,6 +206,11 @@
       <!-- ============ PRESTATIONS ============ -->
       <section id="prestations">
         <div class="wrap">
+            <div class="section-head reveal">
+              <div>
+                <div class="eyebrow" style="margin-bottom: 20px">Prestations</div>
+              </div>
+            </div>
           <div class="prestations-grid">
             <article class="prestation reveal">
               <h3><em>Personnalisé</em></h3>
@@ -267,20 +291,17 @@
           <div class="section-head reveal">
             <div>
               <div class="eyebrow" style="margin-bottom: 20px">Tarifs</div>
-              <h2>Simple.<br />Deux formats, c'est tout.</h2>
             </div>
             <div class="section-head-meta">
               <p>
-                Tarifs identiques pour tout les types de massages. Supplément
-                possible pour les déplacements à domicile hors de Bordeaux
-                centre — à voir ensemble.
+                Tarifs identiques pour tout les types de massages.
               </p>
             </div>
           </div>
 
           <div class="tarifs-grid">
             <div class="tarif reveal">
-              <h3>Séance 60 minutes</h3>
+              <h3>Séance 60 min</h3>
               <div class="tarif-sub">
                 Idéal pour cibler une zone ou découvrir une technique
               </div>
@@ -288,17 +309,12 @@
               <ul class="tarif-includes">
                 <li>Massage de 60 min — technique au choix</li>
               </ul>
-              <a
-                href="tel:+33660095773"
-                class="btn btn-ghost"
-                style="width: 100%; justify-content: center"
-              >
+              <a href="tel:+33660095773" class="btn btn-primary tarif-btn">
                 Réserver ce format
               </a>
             </div>
-
             <div class="tarif featured reveal delay-1">
-              <h3>Séance 90 minutes</h3>
+              <h3>Séance 90 min</h3>
               <div class="tarif-sub">
                 Le temps de vraiment décrocher — corps entier, en profondeur
               </div>
@@ -307,21 +323,9 @@
                 <li>Massage de 90 min — corps entier</li>
                 <li>Moment de repos à la fin, sans bousculer</li>
               </ul>
-              <a
-                href="tel:+33660095773"
-                class="btn btn-accent"
-                style="width: 100%; justify-content: center"
-              >
+              <a href="tel:+33660095773" class="btn btn-accent tarif-btn">
                 Réserver ce format
-                <svg
-                  class="arrow"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                >
-                  <path d="M1 7h12M8 2l5 5-5 5" />
-                </svg>
+                <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 7h12M8 2l5 5-5 5" /></svg>
               </a>
             </div>
           </div>
@@ -498,11 +502,6 @@
                   </div>
                   <div class="spec-label">Formé en<br />spa de luxe</div>
                 </div>
-                <div>
-                  <div class="spec-num">2</div>
-                  <div class="spec-label">Formats<br />possibles</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

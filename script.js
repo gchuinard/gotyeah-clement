@@ -1,6 +1,26 @@
 const fontPreload = document.getElementById("jetbrains-font-preload");
 if (fontPreload) fontPreload.rel = "stylesheet";
 
+const navToggle = document.getElementById("nav-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+if (navToggle && mobileMenu) {
+  const closeMenu = () => {
+    mobileMenu.classList.remove("open");
+    navToggle.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+  navToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    navToggle.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  });
+  mobileMenu.querySelectorAll("a").forEach((link) =>
+    link.addEventListener("click", closeMenu)
+  );
+}
+
 const topbar = document.getElementById("topbar");
 const onScroll = () => {
   topbar.classList.toggle("scrolled", window.scrollY > 10);
