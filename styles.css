@@ -435,6 +435,10 @@ nav.topbar.scrolled {
 .hero-media {
   grid-column: 2;
   grid-row: 1 / span 2;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--paper);
+  border-radius: var(--r-md);
 }
 @media (max-width: 880px) {
   h1 {
@@ -519,20 +523,12 @@ nav.topbar.scrolled {
   letter-spacing: 0.01em;
 }
 
-.hero-media {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: var(--paper);
-  border-radius: var(--r-md);
-}
 .hero-photo {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 54%;
 }
 .about-photo {
   position: absolute;
