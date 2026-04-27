@@ -299,6 +299,15 @@ nav.topbar.scrolled {
   border-color: var(--bark);
 }
 
+.btn-ghost-dark {
+  background: transparent;
+  color: var(--accent-soft);
+  border-color: var(--accent-soft);
+}
+.btn-ghost-dark:hover {
+  border-color: var(--accent-soft);
+}
+
 .btn .arrow {
   width: 14px;
   height: 14px;
