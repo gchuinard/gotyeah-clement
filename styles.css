@@ -213,6 +213,7 @@ nav.topbar.scrolled {
   font-size: 20px;
   letter-spacing: 0;
   color: var(--bark);
+  line-height: 0.9;
 }
 .brand-mark {
   width: 34px;
