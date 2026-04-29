@@ -14,13 +14,20 @@
     <!-- Bhavuka : police principale, préchargée -->
     <link
       rel="preload"
-      href="assets/Bhavuka-Regular.ttf"
+      href="assets/Bhavuka-Regular.woff2"
       as="font"
-      type="font/truetype"
+      type="font/woff2"
       crossorigin
     />
     <!-- Image hero : LCP, préchargée -->
-    <link rel="preload" href="assets/hero-massage.jpeg" as="image" />
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      imagesrcset="assets/hero-massage-600.webp 600w, assets/hero-massage-900.webp 900w, assets/hero-massage-1200.webp 1200w"
+      imagesizes="(max-width: 820px) 100vw, 50vw"
+      fetchpriority="high"
+    />
 
     <!-- JetBrains Mono : utilisée seulement pour les labels/eyebrows, chargée en async -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -83,13 +90,20 @@
     <nav class="topbar" id="topbar">
       <div class="nav-inner">
         <a href="#hero" class="brand" aria-label="Un moment clément">
-          <img
-            class="brand-mark"
-            src="assets/logo-c.png"
-            alt=""
-            width="34"
-            height="34"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcset="assets/logo-c-68.webp 2x, assets/logo-c-102.webp 3x"
+            />
+            <img
+              class="brand-mark"
+              src="assets/logo-c-68.png"
+              srcset="assets/logo-c-68.png 2x, assets/logo-c-102.png 3x"
+              alt=""
+              width="34"
+              height="34"
+            />
+          </picture>
           <span>Un moment clément</span>
         </a>
         <div class="nav-links">
@@ -146,14 +160,23 @@
             </div>
 
             <div class="hero-media">
-              <img
-                class="hero-photo"
-                src="assets/hero-massage.jpeg"
-                alt="Clément en séance de massage"
-                fetchpriority="high"
-                width="600"
-                height="750"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="assets/hero-massage-600.webp 600w, assets/hero-massage-900.webp 900w, assets/hero-massage-1200.webp 1200w"
+                  sizes="(max-width: 820px) 100vw, 50vw"
+                />
+                <img
+                  class="hero-photo"
+                  src="assets/hero-massage-1200.jpg"
+                  srcset="assets/hero-massage-900.jpg 900w, assets/hero-massage-1200.jpg 1200w"
+                  sizes="(max-width: 820px) 100vw, 50vw"
+                  alt="Clément en séance de massage"
+                  fetchpriority="high"
+                  width="600"
+                  height="750"
+                />
+              </picture>
             </div>
 
             <div class="hero-copy-bottom">

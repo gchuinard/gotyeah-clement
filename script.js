@@ -22,11 +22,24 @@ if (navToggle && mobileMenu) {
 }
 
 const topbar = document.getElementById("topbar");
+let scrollScheduled = false;
+let lastScrolled = null;
+const updateTopbar = () => {
+  scrollScheduled = false;
+  const shouldBeScrolled = window.scrollY > 10;
+  if (shouldBeScrolled !== lastScrolled) {
+    topbar.classList.toggle("scrolled", shouldBeScrolled);
+    lastScrolled = shouldBeScrolled;
+  }
+};
 const onScroll = () => {
-  topbar.classList.toggle("scrolled", window.scrollY > 10);
+  if (!scrollScheduled) {
+    scrollScheduled = true;
+    requestAnimationFrame(updateTopbar);
+  }
 };
 window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
+updateTopbar();
 
 const io = new IntersectionObserver(
   (entries) => {

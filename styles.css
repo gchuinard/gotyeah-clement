@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Bhavuka";
-  src: url("assets/Bhavuka-Regular.ttf") format("truetype");
+  src: url("assets/Bhavuka-Regular.woff2") format("woff2"),
+       url("assets/Bhavuka-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -863,6 +864,17 @@ section {
 @media (max-width: 820px) {
   .about-grid {
     grid-template-columns: 1fr;
+  }
+  .about-copy {
+    display: contents;
+  }
+  .about-media {
+    order: 2;
+  }
+  .about-copy > .about-lead,
+  .about-copy > p,
+  .about-copy > .about-specs {
+    order: 3;
   }
 }
 .about-media {
