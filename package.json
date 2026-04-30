@@ -4,7 +4,8 @@
   "description": "> **Description proposée — à valider par Fréro avant merge.** > > Site vitrine de Clément Boéchat, praticien en massages bien-être à Bordeaux. > Présente ses sept techniques (californien, Lomi Lomi, ayurvédique, deep tissue, > réflexologie plantaire, aux bambous, personnalisé), ses tarifs et ses coordonnées > de contact.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node tools/build.js"
   },
   "repository": {
     "type": "git",

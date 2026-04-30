@@ -1,5 +1,4 @@
 const fontPreload = document.getElementById("jetbrains-font-preload");
-if (fontPreload) fontPreload.rel = "stylesheet";
 
 const navToggle = document.getElementById("nav-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -39,7 +38,11 @@ const onScroll = () => {
   }
 };
 window.addEventListener("scroll", onScroll, { passive: true });
-updateTopbar();
+
+requestAnimationFrame(() => {
+  if (fontPreload) fontPreload.rel = "stylesheet";
+  updateTopbar();
+});
 
 const io = new IntersectionObserver(
   (entries) => {
