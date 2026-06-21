@@ -1,5 +1,3 @@
-const fontPreload = document.getElementById("jetbrains-font-preload");
-
 const navToggle = document.getElementById("nav-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
 if (navToggle && mobileMenu) {
@@ -40,7 +38,6 @@ const onScroll = () => {
 window.addEventListener("scroll", onScroll, { passive: true });
 
 requestAnimationFrame(() => {
-  if (fontPreload) fontPreload.rel = "stylesheet";
   updateTopbar();
 });
 
