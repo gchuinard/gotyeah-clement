@@ -1,4 +1,4 @@
-FROM nginx:1.29-alpine
+FROM nginx:1.31-alpine
 COPY nginx-server-tokens.conf /etc/nginx/conf.d/00-server-tokens.conf
 COPY index.html /usr/share/nginx/html/index.html
 COPY styles.css /usr/share/nginx/html/styles.css
